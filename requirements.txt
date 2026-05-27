@@ -1,0 +1,17 @@
+biopython
+biotite
+fair-esm
+joblib
+matplotlib
+numpy
+pandas
+pyyaml
+requests
+scikit-learn
+scipy
+seaborn
+torch
+torch-geometric
+torch-scatter
+tqdm
+transformers

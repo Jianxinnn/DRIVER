@@ -1,0 +1,4 @@
+cache_dir: './output/cache'
+pdb_path: './output/pdb_predict/'
+msas_path: './output/msa_queries'
+max_workers: 4  # Maximum number of parallel worker threads.

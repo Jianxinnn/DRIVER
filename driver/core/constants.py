@@ -1,0 +1,9 @@
+vaspa_alphabet = 'ACDEFGHIKLMNPQRSTVWY'
+prosst_alphabet = 'ACDEFGHIKLMNPQRSTVWY'
+amino_acids = 'ACDEFGHIKLMNPQRSTVWY'
+esm2_alphabet = ['L', 'A', 'G', 'V', 'S', 'E', 'R', 'T', 'I', 'D', 'P', 'K', 'Q', 'N', 'F', 'Y', 'M', 'H', 'W', 'C']
+esma_ab = ''.join(esm2_alphabet)
+vaspa_to_index = {char: index for index, char in enumerate(vaspa_alphabet)}
+index_map = [vaspa_to_index[char] for char in esm2_alphabet]
+esm2_to_index = {char: index for index, char in enumerate(esm2_alphabet)}
+index_to_esm2 = {index: char for char, index in esm2_to_index.items()}

@@ -1,0 +1,41 @@
+# Byte-compiled / optimized
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Packaging
+*.egg-info/
+build/
+dist/
+.eggs/
+
+# Local secrets / config overrides
+.env
+.env.*
+!.env.example
+
+# Runtime artifacts (ignored, regenerated per run)
+output/
+results/
+temp/
+logs/
+flagged/
+examples/results/
+docs/
+
+# Archives & logs
+*.zip
+*.tar
+*.tar.gz
+*.log
