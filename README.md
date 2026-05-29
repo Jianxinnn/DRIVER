@@ -14,15 +14,37 @@ DRIVER enumerates local single-mutant neighborhoods, scores variants with frozen
 protein models, and writes ranked candidates for experimental testing. This repository
 contains the scoring and ranking code; model weights, wet-lab assays, ESMFold outputs,
 MMseqs2 databases, and full ProteinGym benchmarks should be obtained separately.
+For Nature Research code/software checklist mapping, see [NATURE_CHECKLIST.md](NATURE_CHECKLIST.md).
 
 ## Contents
 
+- [System requirements](#system-requirements)
 - [Install](#install)
 - [Quick start](#quick-start)
+- [Demo data](#demo-data)
 - [Two-stage workflow](#two-stage-workflow)
 - [Backends](#backends)
 - [Outputs](#outputs)
+- [Reproducibility notes](#reproducibility-notes)
 - [License](#license)
+
+## System requirements
+
+DRIVER is distributed as source code; no compiled standalone binary is required.
+
+Tested author environment for this peer-review package:
+
+| Item | Version/details |
+|---|---|
+| Operating system | Ubuntu 22.04.5 LTS, Linux 6.8.0 |
+| Python | 3.11.11 in the local `mutant` conda environment; Python 3.10+ is supported |
+| Python packages | See [requirements.txt](requirements.txt) |
+| GPU runtime | NVIDIA driver 550.144.03, CUDA 12.4 |
+| Tested GPUs | NVIDIA RTX A6000 / RTX 5880 Ada Generation, 48 GB memory |
+
+No non-standard hardware is required to inspect the code, parse CLI arguments, or use the
+bundled input files. A CUDA-capable GPU is recommended for model scoring, and full ensemble
+runs that include ESM-2 3B/VespaG are not practical on an ordinary CPU-only desktop.
 
 ## Install
 
@@ -41,6 +63,10 @@ conda activate driver
 pip install -r requirements.txt
 ```
 
+Typical install time for the Python environment is 10-30 minutes on a Linux workstation,
+excluding pretrained model downloads. The first run of an ESM/ProSST backend can add several
+minutes and several GB of network/cache traffic depending on the local Hugging Face cache.
+
 Optional runtime settings:
 
 ```bash
@@ -49,6 +75,8 @@ export HF_ENDPOINT=https://hf-mirror.com   # if your network needs a Hugging Fac
 ```
 
 Install PoET, VespaG, and other external backends only when you run those models.
+The package versions used for review/reproduction are pinned in [requirements.txt](requirements.txt);
+install commands may need to change for local CUDA and Python versions.
 
 ## Quick start
 
@@ -73,7 +101,27 @@ examples/results/esm2_demo/esm2_demo.fa_preview.txt
 examples/results/esm2_demo/esm2_demo.fa_results.zip
 ```
 
+For the 10-aa demo sequence, the CSV contains 190 single-mutant rows plus a header. After
+ESM2 weights are already cached, the demo is expected to finish in less than 5 minutes on a
+CUDA workstation; the first run is dominated by model download time.
+
 See [examples/README.md](examples/README.md) for the staged demo and IscB example files.
+
+## Demo data
+
+Small demo inputs included in this repository:
+
+| File | Purpose |
+|---|---|
+| `examples/esm2_demo.fa` | 10-aa FASTA sequence for the lightweight ESM2 demo |
+| `examples/esm2_demo.a3m` | Matching minimal A3M alignment for the demo |
+| `examples/iscb_stage0.csv` / `examples/iscb_stage1.csv` | IscB example output tables |
+| `examples/iscb_stage0.pdb` / `examples/iscb_stage1.pdb` | Example IscB structure files |
+| `examples/iscb_stage0.a3m` / `examples/iscb_stage1.a3m` | Example IscB MSA files |
+
+To run DRIVER on your own data, provide a FASTA sequence with canonical amino acids. Structure-
+based models need a PDB/CIF file or a cached ProSST token file, and MSA-dependent workflows
+should use an archived `.a3m` file for repeatable runs.
 
 ## Two-stage workflow
 
@@ -159,6 +207,14 @@ stage1_top{K}.csv                Stage 1 selected candidates
 
 Generated files under `examples/results/`, `results/`, and `output/` are ignored by Git.
 
+## Reproducibility notes
+
+For manuscript reproduction, provide the seed FASTA files, A3M/MSA files, structure files
+or ProSST token caches, command lines, environment file, model identifiers, VespaG/PoET
+checkpoint details, ranked CSV outputs, and summary JSON files.
+
 ## License
 
-Released under the [MIT License](LICENSE).
+The DRIVER source code is released under the [MIT License](LICENSE). Third-party pretrained
+model weights, external databases, and optional backend packages are not redistributed here and
+remain subject to their respective licenses.
