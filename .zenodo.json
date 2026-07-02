@@ -1,0 +1,21 @@
+{
+  "title": "DRIVER: a staged zero-shot workflow for ranking protein single-mutant libraries",
+  "creators": [
+    {
+      "name": "DRIVER authors"
+    }
+  ],
+  "description": "DRIVER enumerates local single-mutant neighborhoods, scores variants with frozen protein models, and writes ranked candidates for experimental testing.",
+  "license": "mit",
+  "upload_type": "software",
+  "access_right": "open",
+  "version": "0.1.1",
+  "language": "eng",
+  "keywords": [
+    "protein engineering",
+    "zero-shot learning",
+    "mutation scoring",
+    "protein language models",
+    "deep mutational scanning"
+  ]
+}

@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use DRIVER, please cite the archived software release."
+type: software
+title: "DRIVER: a staged zero-shot workflow for ranking protein single-mutant libraries"
+version: "0.1.1"
+date-released: 2026-07-02
+abstract: "DRIVER enumerates local single-mutant neighborhoods, scores variants with frozen protein models, and writes ranked candidates for experimental testing."
+authors:
+  - name: "DRIVER authors"
+license: "MIT"
+repository-code: "https://github.com/Jianxinnn/DRIVER"
+url: "https://github.com/Jianxinnn/DRIVER"
+keywords:
+  - protein engineering
+  - zero-shot learning
+  - mutation scoring
+  - protein language models
+  - deep mutational scanning

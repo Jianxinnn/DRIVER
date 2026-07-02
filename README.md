@@ -14,7 +14,6 @@ DRIVER enumerates local single-mutant neighborhoods, scores variants with frozen
 protein models, and writes ranked candidates for experimental testing. This repository
 contains the scoring and ranking code; model weights, wet-lab assays, ESMFold outputs,
 MMseqs2 databases, and full ProteinGym benchmarks should be obtained separately.
-For Nature Research code/software checklist mapping, see [NATURE_CHECKLIST.md](NATURE_CHECKLIST.md).
 
 ## Contents
 
@@ -26,6 +25,7 @@ For Nature Research code/software checklist mapping, see [NATURE_CHECKLIST.md](N
 - [Backends](#backends)
 - [Outputs](#outputs)
 - [Reproducibility notes](#reproducibility-notes)
+- [Citation](#citation)
 - [License](#license)
 
 ## System requirements
@@ -212,6 +212,12 @@ Generated files under `examples/results/`, `results/`, and `output/` are ignored
 For manuscript reproduction, provide the seed FASTA files, A3M/MSA files, structure files
 or ProSST token caches, command lines, environment file, model identifiers, VespaG/PoET
 checkpoint details, ranked CSV outputs, and summary JSON files.
+
+## Citation
+
+If you use DRIVER, please cite the archived software release. Citation metadata is provided
+in [CITATION.cff](CITATION.cff), and Zenodo-specific metadata is provided in
+[.zenodo.json](.zenodo.json).
 
 ## License
 
