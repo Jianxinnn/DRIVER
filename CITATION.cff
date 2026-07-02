@@ -6,7 +6,9 @@ version: "0.1.1"
 date-released: 2026-07-02
 abstract: "DRIVER enumerates local single-mutant neighborhoods, scores variants with frozen protein models, and writes ranked candidates for experimental testing."
 authors:
-  - name: "DRIVER authors"
+  - given-names: "Jianxin"
+    family-names: "Tang"
+    orcid: "https://orcid.org/0000-0002-4580-0955"
 license: "MIT"
 repository-code: "https://github.com/Jianxinnn/DRIVER"
 url: "https://github.com/Jianxinnn/DRIVER"
