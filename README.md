@@ -7,6 +7,7 @@
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-ee4c2c.svg)](https://pytorch.org/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![DOI](https://zenodo.org/badge/1085423659.svg)](https://zenodo.org/badge/latestdoi/1085423659)
 
 </div>
 
@@ -218,6 +219,9 @@ checkpoint details, ranked CSV outputs, and summary JSON files.
 If you use DRIVER, please cite the archived software release. Citation metadata is provided
 in [CITATION.cff](CITATION.cff), and Zenodo-specific metadata is provided in
 [.zenodo.json](.zenodo.json).
+
+- Version DOI for `v0.1.1`: [10.5281/zenodo.21133098](https://doi.org/10.5281/zenodo.21133098)
+- Concept DOI for all versions: [10.5281/zenodo.21133097](https://doi.org/10.5281/zenodo.21133097)
 
 ## License
 

@@ -12,6 +12,9 @@ authors:
 license: "MIT"
 repository-code: "https://github.com/Jianxinnn/DRIVER"
 url: "https://github.com/Jianxinnn/DRIVER"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.21133098"
 keywords:
   - protein engineering
   - zero-shot learning
